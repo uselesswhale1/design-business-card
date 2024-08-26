@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp start",
+    "build": "gulp build",
     "deploy": "gulp deploy",
     "format": "prettier -w ./src",
     "remove-darkmode": "node scripts/removeDarkMode.js && npm run format"
