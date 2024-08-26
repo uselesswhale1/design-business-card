@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./bin/www",
-    "start": "nodemon ./bin/www ./bin/www"
+    "build": "node app.js",
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
