@@ -87,6 +87,7 @@ function browsersyncServe(cb) {
   browsersync.init({
     // files: ['./dist'],
     // server: 'dist',
+    port: 443,
     server: {
       baseDir: './dist'
     },
