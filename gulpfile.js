@@ -185,18 +185,16 @@ gulp.task(
         open: false,
         server: {
           baseDir: path.build.dir,
-          middleware: [historyApiFallback()]
         },
       });
     })
   )
 );
 
-// start Task
+// build Task
 gulp.task(
-  "start",
+  "build",
   gulp.series(
-    "clean",
     "pages:prod",
     "styles",
     "scripts",
@@ -206,20 +204,15 @@ gulp.task(
       bs.init({
         server: {
           baseDir: path.build.dir,
+          middleware: [historyApiFallback()]
         },
       });
     })
   )
 );
 
-// Build Task
+// Deploy Task
 gulp.task(
-  "build",
-  gulp.series("clean", "pages", "styles", "scripts", "plugins", "public")
+  "deploy",
+  gulp.series("pages", "styles", "scripts", "plugins", "public")
 );
-
-// // Deploy Task
-// gulp.task(
-//   "deploy",
-//   gulp.series("pages", "styles", "scripts", "plugins", "public")
-// );
