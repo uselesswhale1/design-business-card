@@ -1,2 +1,10 @@
 node_modules
+pinwheel-tailwind
+
+/.pnp
+.json/
+.pnp.js
 package-lock.json
+
+# production
+/theme
