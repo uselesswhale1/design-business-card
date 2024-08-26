@@ -12,6 +12,9 @@ const rimraf = require("rimraf");
 const wrapper = require("gulp-wrapper");
 const comments = require("gulp-header-comment");
 const template = require("gulp-template");
+
+const historyApiFallback = require('connect-history-api-fallback')
+
 const theme = require("./src/theme.json");
 const headerComments = `WEBSITE: https://themefisher.com
                         TWITTER: https://twitter.com/themefisher
@@ -179,8 +182,10 @@ gulp.task(
     "public",
     gulp.parallel("watch", function () {
       bs.init({
+        open: false,
         server: {
           baseDir: path.build.dir,
+          middleware: [historyApiFallback()]
         },
       });
     })
